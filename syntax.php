@@ -135,7 +135,7 @@ class syntax_plugin_publist extends DokuWiki_Syntax_Plugin {
         else if ( $data[$kind]['type'] == 'page' ) {
             $exists = false;
             $id = $data[$kind]['ref'];
-            resolve_pageid($INFO['namespace'], &$id, &$exists);
+            resolve_pageid($INFO['namespace'], $id, $exists);
             if ( $exists ) {
                 return rawWiki($id);
             }
