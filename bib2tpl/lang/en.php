@@ -24,13 +24,13 @@ $translations = array(
                      '12' => 'december|dec'),
 
   // Representations of entry types used as headlines
-  'entrytypes' => array('article'       => 'Articles',
+  'entrytypes' => array('article'       => 'Journal Articles',
                         'book'          => 'Books',
                         'booklet'       => 'Booklets',
                         'conference'    => 'Conference Papers',
                         'inbook'        => 'In Books',
                         'incollection'  => 'In Collections',
-                        'inproceedings' => 'In Proceedings',
+                        'inproceedings' => 'Conference and Workshop Papers',
                         'manual'        => 'Manuals',
                         'mastersthesis' => 'Master\'s Theses',
                         'misc'          => 'Miscellaneous',
