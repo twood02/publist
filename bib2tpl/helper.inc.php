@@ -86,6 +86,42 @@ class Helper
   }
 
   /**
+   * Added by TW
+   * Obtains a month NAME from the passed entry.
+   *
+   * @access public
+   * @param array entry An entry
+   * @return string A nice version of the month name: "jun" -> "June".
+   */
+  function niceMonth($month) {
+    //$month = empty($entry['month']) ? '' : $entry['month'];
+
+    $result = $month;
+    $month = strtolower($month);
+
+    // This is gonna get ugly; other solutions?
+    $pattern = '/^'.$month.'/';
+    if ( preg_match('/^\d[\d]$/', $month) )
+    {
+      return strlen($month) == 1 ? '0'.$month : $month;
+    }
+    else
+    {
+      foreach ( $this->options['lang']['months'] as $number => $name )
+      {
+        if ( preg_match($pattern , $name) )
+        {
+          $result = explode("|", $name);
+          $result = $result[0];
+          break;
+        }
+      }
+    }
+
+    return ucfirst($result);
+  }
+
+  /**
    * Compares two group keys for the purpose of sorting.
    *
    * @access public

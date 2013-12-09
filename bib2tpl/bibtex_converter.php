@@ -439,6 +439,12 @@ class BibtexConverter {
       if ( $key === 'author' ) {
         $value = $entry['niceauthor'];
       }
+      /* TW adding month translation */
+
+      if ($key == "month")
+      {
+         $value = $this->helper->niceMonth($value);
+      }
 
       $patterns []= '/@'.$key.'@/';
       $replacements []= call_user_func($this->sanitise, $value);
