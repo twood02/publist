@@ -40,7 +40,7 @@ $sanitiser = function ($inputstr) {
         'Ñ',
         'ç', 'Ç',
         '$', '&', '%', '#', '_', '{', '}',
-        "\xC2\xA0", ' ', ' '
+        "~", ' ', ' '
     );
     $outputstr = str_replace($search_array, $replace_array, $inputstr);
     return $outputstr;
