@@ -25,7 +25,8 @@ $sanitiser = function ($inputstr) {
         '\~N',
         '\cc', '\cC',
         '\$', '\&', '\%', '\#', '\_', '\{', '\}',	// specials
-        '~', '\,', '\\'					// space
+        '~', '\,', '\\',				// space
+	'{', '}'					// nothing
     );					
     $replace_array = array(
         'á', 'é', 'í', 'ó', 'ú',
@@ -40,7 +41,8 @@ $sanitiser = function ($inputstr) {
         'Ñ',
         'ç', 'Ç',
         '$', '&', '%', '#', '_', '{', '}',
-        "~", ' ', ' '
+        "~", ' ', ' ',
+	'', ''
     );
     $outputstr = str_replace($search_array, $replace_array, $inputstr);
     return $outputstr;
